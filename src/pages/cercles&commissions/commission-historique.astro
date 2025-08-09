@@ -1,0 +1,104 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Links, { LinkType } from "@components/Links.astro";
+
+import _CommHisto from "@images/commissions/commission-historique.jpg";
+import _1100_0 from "@images/locaux/1100.jpg";
+
+import { Image } from "astro:assets";
+
+const commission = "Commission Historique";
+
+const comite = [
+  { role: "", name: "Lucy Bogaert" },
+  { role: "", name: "Raphael Plateau Holvoet" },
+  { role: "", name: "Auguste Cordier" },
+  { role: "", name: "Théo Flamme" },
+  { role: "", name: "Arthur Janssens" },
+];
+const links: { name: string; type: LinkType; url: string }[] | undefined = [
+  {
+    name: "Site web",
+    type: LinkType.WEBSITE,
+    url: "https://historique.fede.fpms.ac.be",
+  },
+  {
+    name: "Facebook",
+    type: LinkType.FACEBOOK,
+    url: "https://www.facebook.com/CommissionHistoriqueFPMs",
+  },
+  {
+    name: "historique.fpms@gmail.com",
+    type: LinkType.EMAIL,
+    url: "mailto:historique.fpms@gmail.com",
+  },
+  {
+    name: "Ancien site web",
+    type: LinkType.WEBSITE,
+    url: "https://historiquefpms.wordpress.com",
+  },
+];
+---
+
+<Layout title={commission}>
+  <main class="container mt-4 space-y-6" transition:animate="slide">
+    <div class="h-64 w-full overflow-hidden rounded-2xl">
+      <Image
+        class="-z-10 h-full w-full object-cover"
+        src={_CommHisto}
+        alt={commission}
+        quality={100}
+        format="webp"
+      />
+    </div>
+    <div class="mx-auto max-w-5xl space-y-6">
+      <h1 class="text-5xl font-semibold">{commission}</h1>
+      <section class="space-y-2 text-justify">
+        <h2 class="text-2xl font-medium">Description</h2>
+        <p>
+          Petite terre de défense du folklore estudiantin, la Commission est
+          pour nous l'occasion de relater les diverses frasques et anecdotes qui
+          jalonnent l'histoire estudiantine de Mons et principalement celles des
+          étudiants de la Faculté Polytechnique. Pour ce faire, nous rassemblons
+          divers témoignages écrits, oraux et matériels que nous publierons sur
+          <a
+            class="text-blue-900 underline"
+            href={links.find((link) => link.type === "WEBSITE")?.url}
+            >ce site internet</a
+          >.
+        </p>
+        <div class="h-32">
+          <Image
+            class="h-full w-full rounded-lg object-cover shadow-md"
+            src={_1100_0}
+            alt="Local de la Commission Historique"
+            quality={30}
+            format="webp"
+          />
+        </div>
+        <p>
+          Toute contribution est donc la bienvenue ! Si vous êtes en possession
+          de documents, objets, souvenirs ou tout simplement d'anecdotes que
+          vous désirez partager, n'hésitez pas à prendre contact avec nous pour
+          que nous puissions en discuter autour d'une excellente pils.
+        </p>
+      </section>
+      <section
+        class="mx-auto max-w-sm rounded-lg border-r-4 border-blue-900 bg-white px-8 py-4 font-medium shadow-box"
+      >
+        <h2 class="pb-4 text-center text-xl">Comité</h2>
+        <ul>
+          {
+            comite.map(({ role, name }) => (
+              <li>
+                {role ? <strong>{role} : </strong> : ""}
+                {name}
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+      {links && links[0] ? <Links links={links} /> : ""}
+    </div>
+  </main>
+</Layout>

@@ -1,0 +1,126 @@
+---
+import LayoutCercle from "@layouts/LayoutCercle.astro";
+import { Image } from "astro:assets";
+import { LinkType } from "@components/Links.astro";
+
+import _SDM from "@images/cercles/sdm.jpg";
+import imageComite from "@images/comités/sdm.jpg";
+import _600_1 from "@images/locaux/600-1.jpg";
+import _600_2 from "@images/locaux/600-2.jpg";
+
+const cercle = "Cercle Sono-Danse-Musique";
+
+const comite = [
+  { role: "Présidente", name: "Mathis Lété" },
+  { role: "Trésorier", name: "Salomé Wadoux" },
+  { role: "Délégué sono", name: "Alex Pluquet" },
+  { role: "Déléguée danse", name: "Quentin De Croon" },
+  { role: "Déléguée musique", name: "Gilles Renier" },
+];
+
+const links = [
+  {
+    name: "Instagram",
+    type: LinkType.INSTAGRAM,
+    url: "https://www.instagram.com/sonodansemusique_fpms/",
+  },
+  {
+    name: "Facebook",
+    type: LinkType.FACEBOOK,
+    url: "https://www.facebook.com/sono.danse.musique.fpms",
+  },
+  {
+    name: "Youtube",
+    type: LinkType.YOUTUBE,
+    url: "https://www.youtube.com/channel/UCmQvRPxJILoCeJW013MdEtA",
+  },
+  {
+    name: "Playlists partagées",
+    type: LinkType.SPOTIFY,
+    url: "https://linktr.ee/SonoDanseMusique_FPMs",
+  },
+];
+---
+
+<LayoutCercle
+  cercle={cercle}
+  imageCercle={_SDM}
+  comite={comite}
+  imageComite={imageComite}
+  links={links}
+>
+  <section class="space-y-2 text-justify">
+    <h2 class="text-2xl font-medium">Description</h2>
+    <p>
+      Dans cette énorme symphonie qu'est la vie, te voilà arrivé dans une
+      nouvelle ère ! Installe-toi confortablement, pose ton casque sur tes
+      oreilles et laisse-toi bercer par le rythme des syllabi, des cours et...
+      de la vie étudiante ! Tu t'apprêtes maintenant à vivre au sein de notre
+      Faculté ce qui seront probablement les années les plus riches de ta vie,
+      et elles pourront vibrer au rythme de la musique si tu désires approcher
+      le Cercle Sono-Danse-Musique.
+    </p>
+    <p>
+      Comme tu t'en doutes probablement, l'activité principale de notre Cercle
+      (plus communément appelé "La Sono") a pour <strong
+        >mission principale l'animation musicale des différentes activités
+        étudiantes</strong
+      >, telles que les soirées, soupers ou autres. Comme son nom l'indique, le
+      Cercle ne s'occupe pas uniquement de l'aspect sono et rassemble <strong
+        >danseurs et musiciens autour de leur passion à plusieurs reprises
+        durant l'année</strong
+      > afin de mettre en place chorégraphies et concerts qui se déroulent devant
+      un public.
+    </p>
+    <p>
+      Parallèlement à la vie de la Faculté, les membres du comité animent
+      également <strong>des soirées privées</strong>. Que ce soit pour un
+      anniversaire, un mariage ou encore une soirée, <strong
+        >tu peux faire appel à nous !</strong
+      > Nous viendrons avec plaisir animer l'évènement en suivant tes critères musicaux
+      si tu en as. Le Cercle possède tout le matériel nécessaire à la sonorisation
+      de ce genre d'évènements et ce, à des prix vraiment intéressants
+    </p>
+    <p>
+      Alors, si le monde de la musique t'intéresse ou si tu souhaites t'en
+      approcher, tu auras de nombreuses occasions de t'y investir et le Cercle
+      t'ouvrira chaleureusement les bras ! Si tu as des questions ou besoin de
+      renseignements, tu peux nous contacter via notre page Facebook ou encore
+      notre compte Instagram « Sono-Dance-Musique ». À bientôt !
+    </p>
+  </section>
+  <section class="space-y-2 text-justify" id="600">
+    <h3 class="text-2xl font-medium">Local 600</h3>
+    <div class="float-right ml-4 h-48 w-full pb-4 sm:w-1/3 sm:pb-0">
+      <Image
+        class="h-full rounded-lg object-cover shadow-md"
+        src={_600_1}
+        alt="Local 600"
+        quality={30}
+        format="webp"
+      />
+    </div>
+    <p>
+      La Sono dispose aussi d'un local, le 600, situé au 6ème étage de la Cité
+      Houzeau au fond du couloir à droite. Il est accessible à tous les
+      étudiants polytech et peut être réservé pour des répétitions ou des
+      enregistrements.
+    </p>
+    <div class="float-left mr-4 h-48 w-full pb-4 sm:w-1/3">
+      <Image
+        class="h-full rounded-lg object-cover shadow-md"
+        src={_600_2}
+        alt="Local 600"
+        quality={30}
+        format="webp"
+      />
+    </div>
+    <p>
+      <i>
+        Tu as besoin d'un endroit où pratiquer ton instrument seul ou entre amis
+        ? Contacte nous pour réserver le local 600 gratuitement sur présentation
+        de ta carte fédé !
+      </i>
+    </p>
+  </section>
+</LayoutCercle>

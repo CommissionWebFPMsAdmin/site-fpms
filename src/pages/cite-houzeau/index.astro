@@ -1,0 +1,150 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Grid from "@components/Grid.astro";
+import { Image } from "astro:assets";
+
+import Houzeau from "@images/locaux/cite-houzeau.jpg";
+import _RestoU from "@images/locaux/resto-houzeau.jpg";
+import _Bar from "@images/locaux/bar.jpg";
+import _LocalCAP from "@images/locaux/cap.jpg";
+import _500 from "@images/locaux/500.jpg";
+import _LocalProjection from "@images/locaux/local-de-projection.jpg";
+import _LocalCommHisto from "@images/locaux/1100.jpg";
+import _Bibli from "@images/locaux/bibli.jpg";
+import _LocalMutu from "@images/locaux/local-mutu.jpg";
+
+import _SallePP from "@images/locaux/placeholder.jpg";
+import _400 from "@images/locaux/placeholder.jpg";
+import _600 from "@images/locaux/600-1.jpg";
+import _700 from "@images/locaux/placeholder.jpg";
+import _800 from "@images/locaux/placeholder.jpg";
+
+const locaux = [
+  {
+    name: "Restaurant universitaire",
+    href: "https://www.facebook.com/profile.php?id=100057476888135",
+    // href: "/cite-houzeau/restaurant-universitaire",
+    image: _RestoU,
+  },
+  {
+    name: "Le Bar Polytech",
+    href: "/cercles&commissions/bar#local",
+    image: _Bar,
+  },
+  {
+    name: "Salle PP",
+    href: "/cite-houzeau/salle-pp",
+    image: _SallePP,
+  },
+  {
+    name: "CAP",
+    href: "/cercles&commissions/cap#local",
+    image: _LocalCAP,
+  },
+  {
+    name: "400 - La Radio",
+    href: "/cercles&commissions/radio-extra#400",
+    image: _400,
+  },
+  {
+    name: "500 - Le Magellan",
+    href: "/cercles&commissions/magellan#500",
+    image: _500,
+  },
+  {
+    name: "600 - Local Sono",
+    href: "/cercles&commissions/sdm#600",
+    image: _600,
+  },
+  {
+    name: "700 - Local Scientifique",
+    href: "/cercles&commissions/scientifique#700",
+    image: _700,
+  },
+  {
+    name: "800 - Salle de sports",
+    href: "/cercles&commissions/sports#800",
+    image: _800,
+  },
+  {
+    name: "9/10 - Local de projection",
+    href: "/cercles&commissions/q#projection",
+    image: _LocalProjection,
+  },
+  {
+    name: "1100 - Commission historique",
+    href: "/cercles&commissions/commission-historique#1100",
+    image: _LocalCommHisto,
+  },
+  {
+    name: "11/12 - La Bibli",
+    href: "/cercles&commissions/q#bibli",
+    image: _Bibli,
+  },
+  {
+    name: "Local Mutu",
+    href: "/cercles&commissions/mutu#local",
+    image: _LocalMutu,
+  },
+];
+---
+
+<Layout title="Cité Houzeau">
+  <main class="container mx-auto space-y-6 px-4 py-4">
+    <h1
+      class="bg-gradient-to-r from-blue-900 to-blue-600 bg-clip-text text-3xl font-bold text-transparent"
+    >
+      Cité Pierre Houzeau de Lehaie
+    </h1>
+    <section class="space-y-3">
+      <h2 class="text-xl font-semibold">Présentation</h2>
+      <section
+        class="space-y-2 rounded-lg border-l-4 border-blue-900 bg-white px-6 py-3 font-medium shadow-box"
+      >
+        <h2 class="text-xl">
+          Cité des étudiants de la Faculté Polytechnique de Mons (FPMs).
+        </h2>
+        <p class="text-justify">
+          La Cité Houzeau est le centre névralgique de la vie étudiante
+          Polytech. Chaque jour, des centaines d'étudiants Polytech s'y
+          rencontrent ou y participent à des activités. En plus du restaurant
+          universitaire Houzeau, on y retrouve tous les locaux gérés par les
+          différents Cercles dont la liste est reprise
+          <a
+            class="text-blue-900 underline duration-150 hover:opacity-80"
+            href="#Locaux de la Cité Houzeau"
+          >
+            ci-dessous ↓
+          </a>
+        </p>
+      </section>
+      <div
+        class="rounded-lg border-r-4 border-blue-900 bg-white font-medium shadow-box md:flex"
+      >
+        <div class="aspect-video flex-1 overflow-hidden">
+          <Image
+            class="h-full w-full rounded-lg object-cover"
+            src={Houzeau}
+            alt="Comité de la Fédération des étudiants de la Faculté Polytechnique de Mons (FPMs)"
+            quality={100}
+            format="webp"
+          />
+        </div>
+        <div
+          class="inline-flex w-full flex-col justify-center px-6 py-6 md:w-auto"
+        >
+          <h3 class="mx-auto max-w-fit pb-4 text-xl">En résumé :</h3>
+          <ul>
+            <li>288 chambres <strong>individuelles</strong> avec sanitaires</li>
+            <li>
+              Centre névralgique de la vie étudiante <strong>Polytech</strong>
+            </li>
+            <li>À <strong>10 minutes</strong> de la Grand-Place</li>
+            <li class="mt-2"><i>Boulevard Dolez, 69 à 7000 Mons</i></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <Grid title="Locaux de la Cité Houzeau" list={locaux} />
+  </main>
+</Layout>

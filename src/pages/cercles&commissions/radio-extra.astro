@@ -1,0 +1,98 @@
+---
+import LayoutCercle from "@layouts/LayoutCercle.astro";
+import { LinkType } from "@components/Links.astro";
+
+import _Radio from "@images/cercles/radio-extra.jpg";
+import imageComite from "@images/comités/radio-extra.jpg";
+
+const cercle = "Cercle Radio Extra";
+
+const comite = [
+  {
+    role: "Président",
+    name: "Romain Lhote",
+  },
+  {
+    role: "Trésorier",
+    name: "Louna Blanquet",
+  },
+  {
+    role: "Secrétaire",
+    name: "Romain Devos",
+  },
+  {
+    role: "Déléguée à la technique",
+    name: "Thomas Ksiazek",
+  },
+  {
+    role: "Délégué à la programmation",
+    name: "Natan Lievens",
+  },
+];
+const links = [
+  {
+    name: "Facebook",
+    type: LinkType.FACEBOOK,
+    url: "https://www.facebook.com/radioextra69",
+  },
+  {
+    name: "Instagram",
+    type: LinkType.INSTAGRAM,
+    url: "https://www.instagram.com/radio_extra/",
+  },
+  {
+    name: "Youtube",
+    type: LinkType.YOUTUBE,
+    url: "https://www.youtube.com/@radioextra6117",
+  },
+  {
+    name: "TikTok",
+    type: LinkType.TIKTOK,
+    url: "https://www.tiktok.com/@radio_extra",
+  },
+  {
+    name: "Spotify",
+    type: LinkType.SPOTIFY,
+    url: "https://open.spotify.com/user/315x2bk4yajnpsavcryx22euuoxy?si=lu14bM5ET4uTSOP6wXOFMQ",
+  },
+];
+---
+
+<LayoutCercle
+  cercle={cercle}
+  imageCercle={_Radio}
+  comite={comite}
+  imageComite={imageComite}
+  links={links}
+>
+  <section class="space-y-2 text-justify">
+    <h2 class="text-2xl font-medium">Description</h2>
+    <p>
+      La Radio Extra, c'est le Cercle qui divertit les étudiants de la Faculté
+      Polytechnique de Mons. Vieille de 47 années, elle ne cesse de se
+      renouveler et de proposer des nouveautés chaque année. La Radio vous
+      propose de multiples activités : <strong
+        >des émissions aux thèmes variés</strong
+      >
+      (auxquelles tu peux assister sur place ou depuis chez toi), des soirées ouvertes
+      à tous, mais aussi un souper, un <strong>débat d'élections</strong>, etc.
+    </p>
+    <p>
+      Mais ce n'est pas tout ! La Radio crée aussi régulièrement du <strong
+        >contenu divertissant</strong
+      > tel que des vidéos ou des playlists musicales, disponibles sur nos réseaux.
+      N'hésite pas à en profiter dès à présent en te rendant sur nos pages <strong
+        >YouTube, Instagram, TikTok, et Spotify !</strong
+      >
+    </p>
+    <p>
+      La Radio est également active lors de la Bleusaille puisqu'elle y anime
+      <strong>les Matinales Radio</strong>. Le lieu qui rassemble les batraciens
+      participant à nos activités se situe au <strong
+        >local 400 de la Cité Houzeau</strong
+      >. C'est un endroit idéal pour passer du bon temps, confortablement assis
+      dans des canapés, souvent un doux breuvage à la main !
+    </p>
+    <p><i>Y a qu'une Radio … À Mons ! Et c'est Radio … Extra !</i></p>
+  </section>
+</LayoutCercle>

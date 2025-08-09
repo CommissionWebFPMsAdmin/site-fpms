@@ -1,0 +1,76 @@
+---
+import LayoutCercle from "@layouts/LayoutCercle.astro";
+import { LinkType } from "@components/Links.astro";
+
+import _Scientifique from "@images/cercles/scientifique.jpg";
+import imageComite from "@images/comités/scientifique.jpg";
+
+const cercle = "Cercle Scientifique";
+
+const video = {
+  url: "https://www.youtube.com/watch?v=EUW6xxHjwIY",
+  promo: 185, // Promo durant laquelle la vidéo a été tournée
+};
+
+const comite = [
+  { role: "Président", name: "Martin Vleminck" },
+  { role: "Secrétaire", name: "Antonin Meunier" },
+];
+
+const links: { name: string; type: LinkType; url: string }[] | undefined = [
+  {
+    name: "Facebook",
+    type: LinkType.FACEBOOK,
+    url: "https://www.facebook.com/profile.php?id=100064300376795",
+  },
+];
+---
+
+<LayoutCercle
+  cercle={cercle}
+  imageCercle={_Scientifique}
+  video={video}
+  comite={comite}
+  imageComite={imageComite}
+  links={links}
+>
+  <section class="space-y-2 text-justify">
+    <h2 class="text-2xl font-medium">Description</h2>
+    <p>
+      On dit souvent qu'un ingénieur civil ne sait pas utiliser ses dix doigts
+      et encore moins planter des clous... Le Cercle Scientifique est là pour y
+      remédier !
+    </p>
+    <p>
+      <strong
+        >Le Cercle Scientifique est premièrement un Cercle tourné vers l'aide
+        aux étudiants et aux autres Cercles de la Faculté.</strong
+      > Comment peut-il vous aider ? Que cela soit pour des petites réparations dans
+      votre kot comme un problème d'armoire ou encore un souci de fenêtre, <strong
+        >le Cercle Scientifique est disponible tout au long de l'année pour vous
+        venir en aide !</strong
+      >
+    </p>
+    <p>
+      Le Scientifique est aussi le Cercle qui peut vous <strong
+        >prêter gratuitement du matériel de bricolage de bonne qualité</strong
+      > (tel que des visseuses, scies sauteuses, marteaux, pieds-de-biche, etc…)
+      pour <strong>vos projets académiques ou personnels</strong>.
+    </p>
+    <p>
+      Le Cercle Scientifique est également le Cercle qui s'implique dans deux
+      des <strong>trois méchouis annuels</strong> et qui organise chaque année depuis
+      10 ans maintenant la <strong>BGT (Big Guinze Theory)</strong> avec l'aide du
+      <a class="text-blue-900 underline" href="/cercles&commissions/radio-extra"
+        >Cercle Radio Extra</a
+      > et du <a
+        class="text-blue-900 underline"
+        href="/cercles&commissions/magellan">Cercle Magellan</a
+      >. Son plus grand projet annuel reste <strong
+        >la construction du char</strong
+      > qui défile fièrement dans les rues de Mons depuis plus de 50 ans lors du
+
+      <strong>cortège des étudiants le jour du Baptême</strong> !
+    </p>
+  </section>
+</LayoutCercle>

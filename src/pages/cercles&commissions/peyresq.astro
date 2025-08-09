@@ -1,0 +1,101 @@
+---
+import LayoutCercle from "@layouts/LayoutCercle.astro";
+import { Image } from "astro:assets";
+import { LinkType } from "@components/Links.astro";
+
+import _Peyresq from "@images/cercles/peyresq.jpg";
+import imageComite from "@images/comités/peyresq.jpg";
+import VacancesAPeyresq from "@images/grands-evenements/vacancesapeyresq.jpg";
+
+const cercle = "Cercle Peyresq";
+
+const video = {
+  url: "https://www.youtube.com/watch?v=OPQXgNBWbqQ",
+  promo: 185, // Promo durant laquelle la vidéo a été tournée
+};
+
+const comite = [
+  { role: "Président", name: "Perrine Vandicke" },
+  { role: "Vice-présidente", name: "Joséphine Vincart" },
+  { role: "Trésorière", name: "Martin Lempire" },
+  { role: "Secrétaire", name: "Louis Lemay" },
+];
+
+const links: { name: string; type: LinkType; url: string }[] | undefined = [
+  {
+    name: "Groupe Facebook (Privé)",
+    type: LinkType.FACEBOOK,
+    url: "https://www.facebook.com/groups/638484686210133",
+  },
+];
+---
+
+<LayoutCercle
+  cercle={cercle}
+  imageCercle={_Peyresq}
+  video={video}
+  comite={comite}
+  imageComite={imageComite}
+  links={links}
+>
+  <section class="space-y-2 text-justify">
+    <h2 class="text-2xl font-medium">Description</h2>
+    <p>
+      Cher lecteur, voyageons dans le temps et retournons ensemble au début des
+      années 50. A cette époque, <strong
+        >un petit village du sud de la France nommé Peyresq</strong
+      > est laissé à l'abandon et seules quelques ruines y sont encore éparpillées
+      par endroits… Mais grâce à l'impulsion de quelques Universités belges (Mons,
+      Bruxelles, Liège, Gembloux), un projet titanesque est amorcé : <strong
+        >reconstruire les ruines afin de ressusciter le village !</strong
+      >
+    </p>
+    <div class="float-right ml-4 h-48 w-full pb-4 sm:w-1/3 sm:pb-0">
+      <Image
+        class="h-full rounded-lg object-cover shadow-md"
+        src={VacancesAPeyresq}
+        alt="Vacances à Peyresq"
+        quality={30}
+        format="webp"
+      />
+    </div>
+    <p>
+      La Fédération des Etudiants Polytech a alors répondu à l'appel du projet
+      et envoyé chaque été pendant plus de 40 ans des étudiants à Peyresq afin
+      de reconstruire le village. Dans la foulée, la Fédé et d'autres
+      associations estudiantines ont également acheté des maisons au village
+      afin d'y héberger leurs étudiants.
+    </p>
+    <p>
+      Cette tradition existe encore aujourd'hui puisque nous, étudiants de la
+      Faculté Polytechnique de Mons, retournons chaque année à Peyresq au début
+      de l'été pour y passer <strong
+        >des vacances amplement méritées après une rude session d'examens</strong
+      >.
+    </p>
+    <p>
+      Le Cercle Peyresq y possède <strong
+        >deux maisons dans lesquelles il organise des vacances pour les
+        étudiants Polytech</strong
+      >, où <strong>folklore et soleil</strong> sont les maîtres-mots. Sur place,
+      le <strong>cadre exceptionnel</strong> de la région nous assure un panel d'activités
+      diverses telles que la randonnée, le canyoning, la découverte de marchés locaux,
+      … Évidemment, ces vacances ne se passent pas seul et le village est également
+      l'occasion de <strong
+        >rencontrer des étudiants venant des quatre coins de la Belgique</strong
+      >, qui viennent passer des vacances dans leurs maisons respectives !
+      Durant le séjour, nous travaillons aussi un peu à l'amélioration de nos
+      maisons via <strong>divers travaux</strong> (rénovation, coupe de bois, construction
+      d'une table,…).
+    </p>
+    <p>
+      Pendant l'année, nous organisons également des évènements afin de faire
+      découvrir l'ambiance et les traditions de Peyresq. <strong
+        >Dégustations de liqueurs, soupers, tournois de pétanque, … sont autant
+        d'occasions de nous rassembler afin de perpétuer l'esprit peyrescan</strong
+      >. D'ici là, ne tergiversez pas et venez à la rencontre des membres du
+      comité Peyresq qui vous conteront, avec des yeux remplis de féérie, les
+      milles et une légendes du village !
+    </p>
+  </section>
+</LayoutCercle>
