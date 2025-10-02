@@ -1,7 +1,7 @@
 ---
 import LayoutCercle from "@layouts/LayoutCercle.astro";
 import { Image } from "astro:assets";
-import type { LinkType } from "@components/Links.astro";
+import { LinkType } from "@components/Links.astro";
 
 import _CAP from "@images/cercles/cap.jpg";
 import imageComite from "@images/comites/cap.jpg";
@@ -13,7 +13,14 @@ const comite = [
   { role: "Président", name: "Justin Duyckaerts" },
   { role: "Trésorier", name: "Tom Boreux" },
 ];
-const links: { name: string; type: LinkType; url: string }[] | undefined = [];
+
+const links = [
+  {
+    name: "Site CAP",
+    type: LinkType.LogoCap,
+    url: "https://cap.fede.fpms.ac.be",
+  },
+];
 ---
 
 <LayoutCercle

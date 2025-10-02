@@ -8,6 +8,7 @@ import Spotify from "@icons/Spotify.astro";
 import Website from "@icons/Website.astro";
 import Tiktok from "@icons/Tiktok.astro";
 import Linktree from "@icons/Linktree.astro";
+import LogoCap from "@icons/Logo_cap.astro";
 
 export enum LinkType {
   FACEBOOK = "FACEBOOK",
@@ -19,6 +20,8 @@ export enum LinkType {
   WEBSITE = "WEBSITE",
   TIKTOK = "TIKTOK",
   LINKTREE = "LINKTREE",
+  LogoCap = "LOGOCAP",
+
 }
 
 interface Props {
@@ -63,6 +66,7 @@ const { links } = Astro.props;
                 {link.type === "SPOTIFY" && <Spotify />}
                 {link.type === "TIKTOK" && <Tiktok />}
                 {link.type === "LINKTREE" && <Linktree />}
+                {link.type === LinkType.LogoCap && <LogoCap />}
                 {link.name}
               </a>
             </li>
