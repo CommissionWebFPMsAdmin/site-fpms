@@ -13,7 +13,13 @@ const comite = [
   { role: "", name: "Lucas Lebrun" },
   { role: "", name: "Guillaume Hinnekens" },
 ];
-const links: { name: string; type: LinkType; url: string }[] | undefined = [];
+const links: { name: string; type: LinkType; url: string }[] | undefined = [
+  {
+    name: "commission.web.fpms@gmail.com",
+    type: LinkType.EMAIL,
+    url: "mailto:commission.web.fpms@gmail.com",
+  },
+];
 ---
 
 <Layout title={commission}>
