@@ -1,9 +1,11 @@
 ---
 import LayoutCercle from "@layouts/LayoutCercle.astro";
+import { Image } from "astro:assets";
 import { LinkType } from "@components/Links.astro";
 
 import _Scientifique from "@images/cercles/scientifique.jpg";
 import imageComite from "@images/comites/scientifique.jpg";
+import _Lapinou from "@images/locaux/700-lapinou.jpg";
 
 const cercle = "Cercle Scientifique";
 
@@ -36,6 +38,18 @@ const links: { name: string; type: LinkType; url: string }[] | undefined = [
 >
   <section class="space-y-2 text-justify">
     <h2 class="text-2xl font-medium">Description</h2>
+    <div class="float-right mb-4 ml-6 w-full max-w-xs sm:max-w-sm">
+      <Image
+        class="h-full w-full rounded-xl object-cover shadow-lg"
+        src={_Lapinou}
+        alt="Lapinou du local 700 du Cercle Scientifique"
+        quality={80}
+        format="webp"
+      />
+      <p class="mt-2 text-center text-sm italic text-blue-900">
+        Lapinou veille sur le local 700 du Cercle Scientifique.
+      </p>
+    </div>
     <p>
       On dit souvent qu'un ingénieur civil ne sait pas utiliser ses dix doigts
       et encore moins planter des clous... Le Cercle Scientifique est là pour y
