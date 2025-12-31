@@ -2,6 +2,7 @@
 import Footer from "@components/Footer.astro";
 import Nav from "@components/Nav.astro";
 import SpeedInsights from "@vercel/speed-insights/astro";
+import Analytics from "@vercel/analytics/astro";
 
 // import { ViewTransitions } from "astro:transitions";
 import { ClientRouter } from "astro:transitions";
@@ -78,6 +79,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
     </style> -->
     <link rel="sitemap" href="/sitemap-index.xml" />
     <SpeedInsights />
+    <Analytics />
     <AstroFont
       config={[
         {
