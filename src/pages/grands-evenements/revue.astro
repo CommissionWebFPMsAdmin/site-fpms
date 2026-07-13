@@ -1,9 +1,8 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import Grid from "@components/Grid.astro";
 import { Image } from "astro:assets";
 
-import Revue from "@images/grands-evenements/revue.jpg";
+import revue from "@images/grands-evenements/revue.jpg";
 ---
 
 <Layout title="Revue des Mines">
@@ -11,7 +10,7 @@ import Revue from "@images/grands-evenements/revue.jpg";
     <div class="h-64 w-full overflow-hidden rounded-2xl">
       <Image
         class="-z-10 h-full w-full object-cover"
-        src={Revue}
+        src={revue}
         alt={"Revue des Mines"}
         quality={100}
         format="webp"
