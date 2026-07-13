@@ -1,0 +1,36 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Grid from "@components/Grid.astro";
+import { Image } from "astro:assets";
+
+import Revue from "@images/grands-evenements/revue.jpg";
+---
+
+<Layout title="Revue des Mines">
+  <main class="container mt-4 space-y-6" transition:animate="slide">
+    <div class="h-64 w-full overflow-hidden rounded-2xl">
+      <Image
+        class="-z-10 h-full w-full object-cover"
+        src={Revue}
+        alt={"Revue des Mines"}
+        quality={100}
+        format="webp"
+      />
+    </div>
+    <div class="mx-auto max-w-5xl space-y-6">
+      <section class="space-y-2 text-justify">
+        <h2 class="text-2xl font-medium">Description</h2>
+        <p>
+          La Revue des Mines est un événement emblématique de la faculté
+          Polytechnique de Mons organisé tous les cinq ans par les étudiants.
+          Cette piece de théâtre humoristique mêle comédie, musique, danse et de
+          magnifiques décors afin de parodier avec humour la vie de la Polytech
+          : les professeurs, les assistants, les examens ainsi que des anecdotes
+          farfelues vécues par les étudiants. À l'issue de ce spectacle, une
+          soirée conviviale est organisée afin de rassembler les étudiants, les
+          enseignants et les anciens étudiants.
+        </p>
+      </section>
+    </div>
+  </main>
+</Layout>
