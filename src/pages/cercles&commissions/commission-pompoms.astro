@@ -1,0 +1,88 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Links, { LinkType } from "@components/Links.astro";
+import Carousel from "@components/Carousel.astro";
+
+import _Pompoms from "@images/commissions/commission-pompoms.jpg";
+import _Pompoms1 from "@images/commissions/commission-pompoms-1.jpeg";
+import _Pompoms2 from "@images/commissions/commission-pompoms-2.jpeg";
+import _Pompoms3 from "@images/commissions/commission-pompoms-3.jpeg";
+
+import { Image } from "astro:assets";
+
+const commission = "Commission PomPoms";
+
+const photos = [_Pompoms1, _Pompoms2, _Pompoms3];
+
+const comite = [
+  { role: "", name: "Vannie Der Kinderen" },
+  { role: "", name: "Lucie Baudoul" },
+  { role: "", name: "Lalie Adant" },
+  { role: "", name: "Olivia Capone" },
+  { role: "", name: "Gaultier Saussez" },
+];
+const links: { name: string; type: LinkType; url: string }[] | undefined = [
+  {
+    name: "Instagram",
+    type: LinkType.INSTAGRAM,
+    url: "https://www.instagram.com/pompom_fpms/",
+  },
+];
+---
+
+<Layout title={commission}>
+  <main class="container mt-4 space-y-6" transition:animate="slide">
+    <div class="h-64 w-full overflow-hidden rounded-2xl">
+      <Image
+        class="-z-10 h-full w-full object-cover"
+        src={_Pompoms}
+        alt={commission}
+        quality={100}
+        format="webp"
+      />
+    </div>
+    <div class="mx-auto max-w-5xl space-y-6">
+      <h1 class="text-5xl font-semibold">{commission}</h1>
+      <section class="space-y-2 text-justify">
+        <h2 class="text-2xl font-medium">Les Pompols, qu'est-ce que c'est ?</h2>
+        <p>
+          Les Pompols, c'est l'équipe de cheerleading de la faculté. Elle
+          rassemble trente-cinq étudiants motivés qui se retrouvent une à deux
+          fois par semaine pour créer un spectacle combinant chorégraphies et
+          portés.
+        </p>
+        <p>
+          Au-delà de l'aspect sportif, les entraînements sont l'occasion
+          d'apprendre de nouvelles figures, de se dépenser et surtout de
+          partager de bons moments ensemble dans une ambiance conviviale.
+          L'intégration au sein de l'équipe est entièrement gratuite et
+          l'ensemble du spectacle est imaginé bénévolement par nos capitaines.
+        </p>
+        <p>
+          L'objectif final de cette préparation est de représenter notre faculté
+          en affrontant les autres équipes lors de la semaine de la Coupe du
+          Mons. Les entraînements se déroulent d'octobre à mars, à raison d'une
+          à deux séances par semaine. Si vous souhaitez faire du sport et vivre
+          une belle aventure collective, n'hésitez pas à nous rejoindre !
+        </p>
+      </section>
+      <Carousel alt={commission} images={photos} />
+      <section
+        class="mx-auto max-w-sm rounded-lg border-r-4 border-blue-900 bg-white px-8 py-4 font-medium shadow-box"
+      >
+        <h2 class="pb-4 text-center text-xl">Comité</h2>
+        <ul>
+          {
+            comite.map(({ role, name }) => (
+              <li>
+                {role ? <strong>{role} : </strong> : ""}
+                {name}
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+      {links && links[0] ? <Links links={links} /> : ""}
+    </div>
+  </main>
+</Layout>
