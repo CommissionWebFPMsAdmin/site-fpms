@@ -1,0 +1,97 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  alt: string;
+  images: ImageMetadata[];
+}
+
+const { alt, images } = Astro.props;
+---
+
+<div class="relative" data-carousel>
+  <ul
+    class="flex snap-x snap-mandatory overflow-x-auto scroll-smooth rounded-2xl shadow-box [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+    data-carousel-track
+  >
+    {
+      images.map((image, index) => (
+        <li class="w-full flex-none snap-center">
+          <Image
+            class="aspect-[3/2] h-full w-full object-cover"
+            src={image}
+            alt={`${alt} (${index + 1})`}
+            quality={80}
+            format="webp"
+          />
+        </li>
+      ))
+    }
+  </ul>
+  <button
+    class="absolute left-3 top-1/2 hidden -translate-y-1/2 rounded-full bg-white/80 px-4 py-2 text-xl font-medium text-blue-900 shadow-box duration-150 hover:bg-white sm:block"
+    type="button"
+    aria-label="Image précédente"
+    data-carousel-prev>&#8249;</button
+  >
+  <button
+    class="absolute right-3 top-1/2 hidden -translate-y-1/2 rounded-full bg-white/80 px-4 py-2 text-xl font-medium text-blue-900 shadow-box duration-150 hover:bg-white sm:block"
+    type="button"
+    aria-label="Image suivante"
+    data-carousel-next>&#8250;</button
+  >
+  <ul class="absolute bottom-3 left-0 flex w-full justify-center gap-2">
+    {
+      images.map((_, index) => (
+        <li>
+          <button
+            class="block h-2.5 w-2.5 rounded-full bg-white/60 shadow-box ring-1 ring-black/10 duration-150 aria-[current=true]:w-6 aria-[current=true]:bg-white"
+            type="button"
+            aria-label={`Aller à l'image ${index + 1}`}
+            data-carousel-dot={index}
+          />
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<script>
+  function setupCarousels() {
+    document.querySelectorAll("[data-carousel]").forEach((carousel) => {
+      if (carousel.hasAttribute("data-carousel-ready")) return;
+      carousel.setAttribute("data-carousel-ready", "");
+
+      const track = carousel.querySelector<HTMLElement>(
+        "[data-carousel-track]",
+      );
+      const dots = carousel.querySelectorAll<HTMLElement>(
+        "[data-carousel-dot]",
+      );
+      if (!track) return;
+
+      const scrollTo = (index: number) =>
+        track.scrollTo({ left: index * track.clientWidth, behavior: "smooth" });
+      const current = () => Math.round(track.scrollLeft / track.clientWidth);
+
+      carousel
+        .querySelector("[data-carousel-prev]")
+        ?.addEventListener("click", () => scrollTo(current() - 1));
+      carousel
+        .querySelector("[data-carousel-next]")
+        ?.addEventListener("click", () => scrollTo(current() + 1));
+      dots.forEach((dot, index) =>
+        dot.addEventListener("click", () => scrollTo(index)),
+      );
+
+      const update = () =>
+        dots.forEach((dot, index) =>
+          dot.setAttribute("aria-current", String(index === current())),
+        );
+      track.addEventListener("scroll", update, { passive: true });
+      update();
+    });
+  }
+
+  document.addEventListener("astro:page-load", setupCarousels);
+</script>
