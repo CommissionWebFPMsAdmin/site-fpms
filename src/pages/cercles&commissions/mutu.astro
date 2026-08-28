@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 import { LinkType } from "@components/Links.astro";
 
 import _Mutu from "@images/cercles/mutu.jpg";
-import imageComite from "@images/comites/mutu.jpg";
+import imageComite from "@images/comites/mutu.webp";
 import _LocalMutu from "@images/locaux/local-mutu.jpg";
 
 const cercle = "Mutuelle des Étudiants";
@@ -12,15 +12,15 @@ const cercle = "Mutuelle des Étudiants";
 const comite = [
   {
     role: "Président",
-    name: "Antoine Lenfant",
+    name: "Antoine Thiry",
   },
   {
     role: "Trésorier",
-    name: "Julien Van Durmen",
+    name: "Cyril Tanghe",
   },
   {
     role: "Secrétaire",
-    name: "Antoine Thiry",
+    name: "Esther De Ville",
   },
 ];
 
@@ -44,6 +44,7 @@ const links = [
   comite={comite}
   imageComite={imageComite}
   links={links}
+  classCommite="scale-110"
 >
   <section class="space-y-2 text-justify">
     <h2 class="text-2xl font-medium">Description</h2>
