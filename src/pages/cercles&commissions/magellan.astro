@@ -3,7 +3,7 @@ import LayoutCercle from "@layouts/LayoutCercle.astro";
 import { LinkType } from "@components/Links.astro";
 
 import _Magellan from "@images/cercles/magellan.jpg";
-import imageComite from "@images/comites/magellan.jpg";
+import imageComite from "@images/comites/magellan.webp";
 import _500 from "@images/locaux/500.jpg";
 import Game from "@images/grands-evenements/game.jpg";
 
@@ -14,7 +14,7 @@ const cercle = "Cercle Magellan";
 const comite = [
   { role: "Président", name: "Théau Pauwels" },
   { role: "Trésorier", name: "Auguste Cordier" },
-  { role: "Secrétaire", name: "Andréa Paciorkowski" },
+  { role: "Secrétaire", name: "Lucien Marchetti" },
 ];
 
 const links = [
@@ -62,6 +62,7 @@ const links = [
   comite={comite}
   imageComite={imageComite}
   links={links}
+  classCommite="scale-[1.25]"
 >
   <section class="space-y-2 text-justify">
     <h2 class="text-2xl font-medium">Description</h2>
