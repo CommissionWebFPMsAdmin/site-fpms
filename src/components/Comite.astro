@@ -5,9 +5,10 @@ interface Props {
   cercle: string;
   imageComite: ImageMetadata;
   comite: { role: string; name: string }[];
+  classCommite?: string;
 }
 
-const { cercle, imageComite, comite } = Astro.props;
+const { cercle, imageComite, comite , classCommite} = Astro.props;
 
 const altComite = `Comité - ${cercle}`;
 ---
@@ -17,10 +18,10 @@ const altComite = `Comité - ${cercle}`;
 >
   <div class="aspect-video flex-1 overflow-hidden">
     <Image
-      class="h-full w-full rounded-lg object-cover"
+      class={`h-full w-full rounded-lg object-cover ${classCommite}`}
       src={imageComite}
       alt={altComite}
-      quality={30}
+      quality={95}
       format="webp"
     />
   </div>

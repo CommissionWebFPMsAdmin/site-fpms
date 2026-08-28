@@ -3,14 +3,14 @@ import LayoutCercle from "@layouts/LayoutCercle.astro";
 import { LinkType } from "@components/Links.astro";
 
 import _Bar from "@images/cercles/bar.jpg";
-import imageComite from "@images/comites/bar.jpg";
+import imageComite from "@images/comites/bar.webp";
 
 const cercle = "Cercle du Bar";
 
 const comite = [
-  { role: "Président", name: "Pierre Brusselmans" },
-  { role: "Trésorier", name: "Rémy Lempire" },
-  { role: "Secrétaire", name: "Tom Lecat" },
+  { role: "Président", name: "Tom Lecat" },
+  { role: "Trésorier", name: "Tom Boreux" },
+  { role: "Secrétaire", name: "Antoine Estievenart" },
 ];
 
 const links = [
@@ -28,6 +28,7 @@ const links = [
   comite={comite}
   imageComite={imageComite}
   links={links}
+  classCommite="scale-[1.3]"
 >
   <section class="space-y-2 text-justify" id="local">
     <h2 class="text-2xl font-medium">Description</h2>
