@@ -9,7 +9,7 @@ import Centrale from "@images/régionales/centrale.jpg";
 import Boraine from "@images/régionales/boraine.jpg";
 
 import CerclePolytech from "@images/cercle-polytech.jpg";
-import ComiteFêtes from "@images/comites/fetes.jpg";
+import ComiteFêtes from "@images/comites/fetes.webp";
 import Facebook from "@icons/Facebook.astro";
 
 const fêtes = {
@@ -17,9 +17,9 @@ const fêtes = {
   href: "/folklore/cercle-des-fetes",
   image: ComiteFêtes,
   comite: [
-    { role: "Président", name: "Yoan Laubin" },
-    { role: "Trésorier", name: "Simon Chevalier" },
-    { role: "Secrétaire", name: "Lucie Lebrun" },
+    { role: "Président", name: "André Lefèvre" },
+    { role: "Trésorier", name: "Pierre Brusselmans" },
+    { role: "Secrétaire", name: "Emilie Bernaert" },
   ],
 };
 
@@ -72,10 +72,10 @@ const link = {
       <div class="rounded-lg border-r-4 border-blue-900 bg-white font-medium shadow-box sm:flex">
         <div class="aspect-video flex-1 overflow-hidden">
           <Image
-            class="h-full w-full rounded-lg object-cover"
+            class="h-full w-full rounded-lg object-cover scale-[1.7] object-[right_13px_top_10px]"
             src={fêtes.image}
             alt="Comité de la Fédération des étudiants de la Faculté Polytechnique de Mons (FPMs)"
-            quality={30}
+            quality={90}
             format="webp"
           />
         </div>
