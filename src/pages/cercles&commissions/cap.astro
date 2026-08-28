@@ -4,14 +4,14 @@ import { Image } from "astro:assets";
 import { LinkType } from "@components/Links.astro";
 
 import _CAP from "@images/cercles/cap.jpg";
-import imageComite from "@images/comites/cap.jpg";
+import imageComite from "@images/comites/cap.webp";
 import _LocalCAP from "@images/locaux/cap.webp";
 
 const cercle = "Centrale d'Achats Polytech";
 
 const comite = [
-  { role: "Président", name: "Justin Duyckaerts" },
-  { role: "Trésorier", name: "Tom Boreux" },
+  { role: "Président", name: "Julien Messaoui" },
+  { role: "Trésorier", name: "Achille Tonthat" },
 ];
 
 const links = [
@@ -29,6 +29,7 @@ const links = [
   comite={comite}
   imageComite={imageComite}
   links={links}
+  classCommite="scale-[1.4]"
 >
   <section class="space-y-2 text-justify">
     <h2 class="text-2xl font-medium">Description</h2>
