@@ -17,9 +17,10 @@ interface Props {
     type: LinkType;
     url: string;
   }[];
+  classCommite?: string;
 }
 
-const { cercle, imageCercle, video, comite, imageComite, links } = Astro.props;
+const { cercle, imageCercle, video, comite, imageComite, links,classCommite } = Astro.props;
 ---
 
 <Layout title={cercle}>
@@ -43,7 +44,7 @@ const { cercle, imageCercle, video, comite, imageComite, links } = Astro.props;
           ""
         )
       }
-      <Comite cercle={cercle} imageComite={imageComite} comite={comite} />
+      <Comite cercle={cercle} imageComite={imageComite} classCommite={classCommite} comite={comite} />
       {links && links[0] ? <Links links={links} /> : ""}
     </div>
   </main>

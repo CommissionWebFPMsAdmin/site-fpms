@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 import { LinkType } from "@components/Links.astro";
 
 import _Sports from "@images/cercles/sports.jpg";
-import imageComite from "@images/comites/sports.jpg";
+import imageComite from "@images/comites/sports.webp";
 import Ski from "@images/grands-evenements/ski.jpg";
 
 const cercle = "Cercle des Sports";
@@ -12,19 +12,19 @@ const cercle = "Cercle des Sports";
 const comite = [
   {
     role: "Président",
-    name: "Mathis Coulon",
+    name: "Thomas Deschamp",
   },
   {
-    role: "Vice-présidente",
-    name: "Kateline Malray",
+    role: "Vice-président",
+    name: "Antoine Lenfant",
   },
   {
     role: "Trésorier",
-    name: "Thomas Deschamps",
+    name: "Gaultier Saussez",
   },
   {
     role: "Secrétaire",
-    name: "Gaultier Saussez",
+    name: "Elisa Lhote",
   },
 ];
 
@@ -53,6 +53,7 @@ const links = [
   comite={comite}
   imageComite={imageComite}
   links={links}
+  classCommite="scale-[1.7]"
 >
   <section class="space-y-4 text-justify">
     <h2 class="text-2xl font-medium">Description</h2>

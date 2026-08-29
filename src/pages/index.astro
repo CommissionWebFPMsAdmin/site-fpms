@@ -4,14 +4,14 @@ import { Image } from "astro:assets";
 import Layout from "@layouts/Layout.astro";
 
 import statueFPMs from "@images/statue-fpms.jpg";
-import comiteFede from "@images/comites/fede.jpg";
+import comiteFede from "@images/comites/fede.webp";
 
 const comite = [
-  { role: "Président", name: "Arnaud Draye" },
-  { role: "Vice-président", name: "François Cayphas" }, 
-  { role: "Secrétaire", name: "Romane Sogalow" }, 
-  { role: "Trésorier", name: "Hugo Musin" }, 
-  { role: "DRE", name: "Alexis Michel" }, 
+  { role: "Président", name: "Guillaume Chamart" },
+  { role: "Vice-président", name: "Mathis Lété" }, 
+  { role: "Secrétaire", name: "Mathis Coulon" }, 
+  { role: "Trésorier", name: "Mathys Rogge" }, 
+  { role: "DRE*", name: "Léa Robinet" }, 
 ];
 ---
 
@@ -73,10 +73,10 @@ const comite = [
     >
       <div class="aspect-video flex-1 overflow-hidden">
         <Image
-          class="h-full w-full rounded-lg object-cover"
+          class="h-full w-full rounded-lg object-cover object-top scale-110"
           src={comiteFede}
           alt="Comité de la Fédération des étudiants de la Faculté Polytechnique de Mons (FPMs)"
-          quality={30}
+          quality={95}
           format="webp"
         />
       </div>
