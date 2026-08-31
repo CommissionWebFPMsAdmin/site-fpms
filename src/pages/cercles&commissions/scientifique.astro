@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 import { LinkType } from "@components/Links.astro";
 
 import _Scientifique from "@images/cercles/scientifique.jpg";
-import imageComite from "@images/comites/scientifique.jpg";
+import imageComite from "@images/comites/scientifique.webp";
 import _Lapinou from "@images/locaux/700-lapinou.jpg";
 
 const cercle = "Cercle Scientifique";
@@ -15,8 +15,9 @@ const video = {
 };
 
 const comite = [
-  { role: "Président", name: "Martin Vleminck" },
-  { role: "Trésorier", name: "Antonin Meunier" },
+  { role: "Président", name: "Antonin Meunier" },
+  { role: "Trésorier", name: "Romain Bequet" },
+  { role: "Délégué matériel", name: "Baptiste Spriet" }
 ];
 
 const links: { name: string; type: LinkType; url: string }[] | undefined = [
