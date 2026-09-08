@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import vercel from "@astrojs/vercel";
 import react from "@astrojs/react";
-import tailwind from "@astrojs/tailwind";
+import tailwind from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 
 import robotsTxt from "astro-robots-txt";
@@ -14,26 +14,20 @@ export default defineConfig({
   },
   integrations: [
     react(),
-    tailwind({
-      // Example: Disable injecting a basic `base.css` import on every page.
-      // Useful if you need to define and/or import your own custom `base.css`.
-      applyBaseStyles: false,
-    }),
     sitemap(),
     robotsTxt(),
   ],
+  vite: {
+    plugins: [tailwind()],
+  },
   site: "https://fede.fpms.ac.be",
   output: "static",
-  adapter: vercel({
-    webAnalytics: {
-      enabled: true,
-    },
-  }),
-  // Add the headers configuration to set CSP
-  serverOptions: {
+  compressHTML: true,
+  adapter: vercel({webAnalytics: true,
+    serverOptions: {
     headers: {
       "Content-Security-Policy":
         "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self';",
     },
-  },
+  },  }),
 });

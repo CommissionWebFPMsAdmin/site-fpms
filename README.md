@@ -12,7 +12,15 @@
 
 #### 🌟 Astro
 
-Ce site a été développer grâce à Astro, un framework permettant la génération de site statique. Pour plus d'information concernant Astro, veuillez consulter [leur documentation](https://docs.astro.build).
+Ce site utilise Astro 7.3.1 et Tailwind CSS 4 avec le plugin Vite officiel.
+Le thème est défini dans `src/styles/base.css`.
+
+Utiliser Node.js 24 (`nvm use`) et npm ≥ 9.6.5, puis `npm ci` pour installer les
+dépendances verrouillées. Le build nécessite un accès à Google Fonts pour Poppins.
+
+Le [plan de migration](./MIGRATION.md) décrit les adaptations et les contraintes
+de déploiement. Pour plus d'informations concernant Astro, consulter
+[la documentation](https://docs.astro.build).
 
 #### 🧞 Commandes utiles
 
@@ -20,7 +28,7 @@ Toutes les commandes sont a exécuter depuis la racine du dossier du projet depu
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
+| `npm ci`                  | Installs locked dependencies                     |
 | `npm run dev`             | Starts local dev server at `localhost:4321`      |
 | `npm run build`           | Build your production site to `./dist/`          |
 | `npm run preview`         | Preview your build locally, before deploying     |
@@ -98,7 +106,7 @@ Inside of your Astro project, you'll see the following folders and files:
 │       ├── 404.astro
 │       └── index.astro
 ├── package.json
-├── tailwind.config.mjs
+├── .nvmrc
 └── tsconfig.json
 ```
 

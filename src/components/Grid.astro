@@ -1,6 +1,5 @@
 ---
 import { Image } from "astro:assets";
-import { undefined } from "astro:schema";
 
 interface Props {
   title?: string;
@@ -33,7 +32,7 @@ const { title, list } = Astro.props;
                 quality={30}
                 format="webp"
               />
-              <h3 class="absolute bottom-3 left-4 w-[calc(100%_-_2rem)] text-xl font-medium text-white drop-shadow-normal">
+              <h3 class="absolute bottom-3 left-4 w-[calc(100%_-_2rem)] text-xl font-medium text-white text-shadow-title">
                 {item.name}
               </h3>
             </>
