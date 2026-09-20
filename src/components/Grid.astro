@@ -8,6 +8,7 @@ interface Props {
     name: string;
     href: string;
     image: ImageMetadata;
+    imageClass?: string;
     color?: string;
     newTab?: boolean;
   }[];
@@ -27,7 +28,7 @@ const { title, list } = Astro.props;
           <a href={item.href} target={item.newTab ? "_blank" : "_self"}>
             <>
               <Image
-                class="-z-10 h-full object-cover"
+                class:list={["-z-10 h-full object-cover", item.imageClass]}
                 src={item.image}
                 alt={item.name}
                 quality={30}
