@@ -4,9 +4,10 @@ import { Image } from "astro:assets";
 interface Props {
   alt: string;
   images: ImageMetadata[];
+  captions?: string[];
 }
 
-const { alt, images } = Astro.props;
+const { alt, images, captions = [] } = Astro.props;
 ---
 
 <div class="relative" data-carousel>
@@ -17,13 +18,20 @@ const { alt, images } = Astro.props;
     {
       images.map((image, index) => (
         <li class="w-full flex-none snap-center">
-          <Image
-            class="aspect-[3/2] h-full w-full object-cover"
-            src={image}
-            alt={`${alt} (${index + 1})`}
-            quality={80}
-            format="webp"
-          />
+          <figure class="relative">
+            <Image
+              class="aspect-[3/2] w-full object-cover"
+              src={image}
+              alt={captions[index] ?? `${alt} (${index + 1})`}
+              quality={80}
+              format="webp"
+            />
+            {captions[index] && (
+              <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent px-4 pb-10 pt-8 text-center text-sm font-medium text-white">
+                {captions[index]}
+              </figcaption>
+            )}
+          </figure>
         </li>
       ))
     }
