@@ -30,36 +30,45 @@ Toutes les commandes sont a exécuter depuis la racine du dossier du projet depu
 
 ## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
+Les principaux dossiers et fichiers du projet sont organisés ainsi :
 
 ```text
 /
 ├── public/
+│   ├── pv/
+│   ├── status/
 │   └── favicon.svg
 ├── src/
 │   ├── assets/
-│   │   ├── autres/
 │   │   └── images/
 │   │       ├── autres-initiatives-polytech/
 │   │       ├── cercles/
-│   │       ├── comités/
+│   │       ├── comites/
 │   │       ├── commissions/
-│   │       ├── grand-evenements/
+│   │       ├── grands-evenements/
 │   │       ├── locaux/
+│   │       ├── old/
+│   │       ├── projets/
+│   │       │   ├── carte-fede.png
+│   │       │   └── kiosk-boissons-500.jpg
 │   │       ├── régionales/
 │   │       ├── cercle-polytech.jpg
 │   │       └── statue-fpms.jpg
 │   ├── components/
+│   │   ├── Carousel.astro
 │   │   ├── Comite.astro
 │   │   ├── Footer.astro
 │   │   ├── Grid.astro
 │   │   ├── Links.astro
 │   │   ├── Nav.astro
 │   │   └── Video.astro
+│   ├── env.d.ts
 │   ├── icons/
 │   ├── layouts/
 │   │   ├── Layout.astro
 │   │   └── LayoutCercle.astro
+│   ├── styles/
+│   │   └── base.css
 │   └── pages/
 │       ├── a-propos/
 │       │   └── index.astro
@@ -69,6 +78,7 @@ Inside of your Astro project, you'll see the following folders and files:
 │       │   ├── bar.astro
 │       │   ├── cap.astro
 │       │   ├── commission-historique.astro
+│       │   ├── commission-pompoms.astro
 │       │   ├── commission-web.astro
 │       │   ├── cpv.astro
 │       │   ├── ecomission.astro
@@ -92,11 +102,15 @@ Inside of your Astro project, you'll see the following folders and files:
 │       │   ├── carolo.astro
 │       │   ├── centrale.astro
 │       │   ├── frontaliere.astro
-│       │   └── sports.astro
-│       ├── grands-evenements/
 │       │   └── index.astro
+│       ├── grands-evenements/
+│       │   ├── bdm.astro
+│       │   ├── index.astro
+│       │   └── revue.astro
 │       ├── 404.astro
 │       └── index.astro
+├── astro.config.mjs
+├── package-lock.json
 ├── package.json
 ├── tailwind.config.mjs
 └── tsconfig.json
